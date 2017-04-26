@@ -1,0 +1,466 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<meta name=Generator content="Microsoft Word 12 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:华文仿宋;
+	panose-1:2 1 6 0 4 1 1 1 1 1;}
+@font-face
+	{font-family:仿宋_GB2312;}
+@font-face
+	{font-family:"\@宋体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:"\@华文仿宋";
+	panose-1:2 1 6 0 4 1 1 1 1 1;}
+@font-face
+	{font-family:"\@仿宋_GB2312";}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.5pt;
+	font-family:"Times New Roman","serif";}
+h1
+	{mso-style-link:"标题 1 Char";
+	margin-top:17.0pt;
+	margin-right:0cm;
+	margin-bottom:16.5pt;
+	margin-left:0cm;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:240%;
+	page-break-after:avoid;
+	font-size:22.0pt;
+	font-family:"Times New Roman","serif";
+	font-weight:bold;}
+h2
+	{mso-style-link:"标题 2 Char";
+	margin-top:13.0pt;
+	margin-right:0cm;
+	margin-bottom:13.0pt;
+	margin-left:0cm;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:173%;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Cambria","serif";
+	font-weight:bold;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:center;
+	layout-grid-mode:char;
+	border:none;
+	padding:0cm;
+	font-size:9.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	layout-grid-mode:char;
+	font-size:9.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{mso-style-link:"标题 Char";
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	text-align:center;
+	font-size:16.0pt;
+	font-family:"Cambria","serif";
+	font-weight:bold;}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{mso-style-link:"文档结构图 Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:9.0pt;
+	font-family:宋体;}
+p
+	{margin-right:0cm;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:宋体;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"批注框文本 Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:9.0pt;
+	font-family:"Times New Roman","serif";}
+span.Char
+	{mso-style-name:"批注框文本 Char";
+	mso-style-link:批注框文本;}
+span.Char0
+	{mso-style-name:"标题 Char";
+	mso-style-link:标题;
+	font-family:"Cambria","serif";
+	font-weight:bold;}
+span.Char1
+	{mso-style-name:"文档结构图 Char";
+	mso-style-link:文档结构图;
+	font-family:宋体;}
+span.1Char
+	{mso-style-name:"标题 1 Char";
+	mso-style-link:"标题 1";
+	font-weight:bold;}
+span.2Char
+	{mso-style-name:"标题 2 Char";
+	mso-style-link:"标题 2";
+	font-family:"Cambria","serif";
+	font-weight:bold;}
+.MsoChpDefault
+	{font-size:10.0pt;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	layout-grid:15.6pt;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=ZH-CN style='text-justify-trim:punctuation'>
+
+<div class=WordSection1 style='layout-grid:15.6pt'>
+
+<p class=MsoTitle><span style='position:absolute;z-index:-1;left:0px;
+margin-left:3px;margin-top:205px;width:521px;height:519px'></span><span lang=EN-US style='font-size:14.0pt'>Bash</span><span
+style='font-size:14.0pt;font-family:宋体'>源码分析</span><span lang=EN-US
+style='font-size:14.0pt'>(1)</span></p>
+
+<p class=MsoNormal align=right style='text-align:right'><span style='font-family:
+宋体'>虚拟化开发四部</span> <span style='font-family:宋体'>周荣华</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体'>作者简介：</span><span lang=EN-US>10</span><span
+style='font-family:宋体'>年通讯底层研发经验，熟悉</span><span lang=EN-US>linux/vxworks</span><span
+style='font-family:宋体'>等实时操作系统的内核原理和实现，在虚拟化的</span><span lang=EN-US>openstack</span><span
+style='font-family:宋体'>，</span><span lang=EN-US>kubernetes</span><span
+style='font-family:宋体'>，</span><span lang=EN-US>docker</span><span
+style='font-family:宋体'>等领域也初有涉猎。</span></p>
+
+<h1><span lang=EN-US style='font-size:14.0pt;line-height:240%'>1 </span><span
+style='font-size:14.0pt;line-height:240%;font-family:宋体'>引言</span></h1>
+
+<p class=MsoNormal><span lang=EN-US>Bash</span><span style='font-family:宋体'>这个程序作为一个</span><span
+lang=EN-US>linux</span><span style='font-family:宋体'>的用户，用的实在太频繁了，但一般局限于会用就结束了，一直没机会研究</span><span
+lang=EN-US>bash</span><span style='font-family:宋体'>本身的原理。因工作需要，调试一个</span><span
+lang=EN-US>bash</span><span style='font-family:宋体'>的</span><span lang=EN-US>cpu</span><span
+style='font-family:宋体'>冲高问题，趁此机会对</span><span lang=EN-US>bash</span><span
+style='font-family:宋体'>的源码做了一些研究，希望能对大家有点帮助。</span></p>
+
+<h1><span lang=EN-US style='font-size:14.0pt;line-height:240%'>2 linux</span><span
+style='font-size:14.0pt;line-height:240%;font-family:宋体'>的各种主流</span><span
+lang=EN-US style='font-size:14.0pt;line-height:240%'>shell</span><span
+style='font-size:14.0pt;line-height:240%;font-family:宋体'>介绍</span></h1>
+
+<p class=MsoNormal><span style='font-family:宋体'>现在一般使用的</span><span lang=EN-US>shell</span><span
+style='font-family:宋体'>有</span><span lang=EN-US>sh</span><span
+style='font-family:宋体'>，</span><span lang=EN-US>bash</span><span
+style='font-family:宋体'>和</span><span lang=EN-US>csh</span><span
+style='font-family:宋体'>这几种，我们这里主要说的是</span><span lang=EN-US>bash</span><span
+style='font-family:宋体'>，其他</span><span lang=EN-US>shell</span><span
+style='font-family:宋体'>的源代码逻辑也差不多。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<h1><span lang=EN-US style='font-size:14.0pt;line-height:240%'>3 bash</span><span
+style='font-size:14.0pt;line-height:240%;font-family:宋体'>使用到的主要数据结构介绍</span></h1>
+
+<h2><span lang=EN-US style='font-size:14.0pt;line-height:173%'>3.1 COMMAND</span></h2>
+
+<p class=MsoNormal><span lang=EN-US><img width=554 height=411 id="图片 1"
+src="InsideBashSourceCode(1).files/image002.jpg"></span></p>
+
+<p class=MsoNormal><span lang=EN-US>COMMAND</span><span style='font-family:
+宋体'>是所有数据结构的纲，从这里可以看出一个</span><span lang=EN-US>bash</span><span
+style='font-family:宋体'>实际能执行的语句有</span><span lang=EN-US>14</span><span
+style='font-family:宋体'>种，分别位</span><span lang=EN-US>for</span><span
+style='font-family:宋体'>，</span><span lang=EN-US>case</span><span
+style='font-family:宋体'>，</span><span lang=EN-US>while</span><span
+style='font-family:宋体'>，</span><span lang=EN-US>fi</span><span
+style='font-family:宋体'>，</span><span lang=EN-US>connection</span><span
+style='font-family:宋体'>，</span><span lang=EN-US>simple_com</span><span
+style='font-family:宋体'>，</span><span lang=EN-US>function</span><span
+style='font-family:宋体'>，</span><span lang=EN-US>group</span><span
+style='font-family:宋体'>，</span><span lang=EN-US>select</span><span
+style='font-family:宋体'>，</span><span lang=EN-US>arith</span><span
+style='font-family:宋体'>，</span><span lang=EN-US>cond</span><span
+style='font-family:宋体'>，</span><span lang=EN-US>arith_for</span><span
+style='font-family:宋体'>，</span><span lang=EN-US>subshell</span><span
+style='font-family:宋体'>，</span><span lang=EN-US>coproc</span><span
+style='font-family:宋体'>，其中</span><span lang=EN-US>select</span><span
+style='font-family:宋体'>，</span><span lang=EN-US>arith</span><span
+style='font-family:宋体'>，</span><span lang=EN-US>cond</span><span
+style='font-family:宋体'>，</span><span lang=EN-US>arith_for</span><span
+style='font-family:宋体'>这</span><span lang=EN-US>4</span><span style='font-family:
+宋体'>个命令需要打开对应的编译开关之后才能执行。</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体'>除了下面的这个</span><span lang=EN-US>union</span><span
+style='font-family:宋体'>外，另外几个属性分别对应命令类型，行号和执行环境控制参数。其中控制参数有很多，每个控制参数占用一个</span><span
+lang=EN-US>bit</span><span style='font-family:宋体'>位，包括是否启动子</span><span
+lang=EN-US>shell</span><span style='font-family:宋体'>，是否忽略</span><span
+lang=EN-US>exit</span><span style='font-family:宋体'>值等。</span></p>
+
+<p class=MsoNormal><span lang=EN-US><img width=554 height=201 id="图片 7"
+src="InsideBashSourceCode(1).files/image003.jpg"></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体'>这些</span><span lang=EN-US>flag</span><span
+style='font-family:宋体'>可以在</span><span lang=EN-US>bash</span><span
+style='font-family:宋体'>启动</span><span lang=EN-US>shell</span><span
+style='font-family:宋体'>脚本时设置，或者在</span><span lang=EN-US>shell</span><span
+style='font-family:宋体'>脚本内部调用</span><span lang=EN-US>set</span><span
+style='font-family:宋体'>指令来设置，一般用户不怎么关注，高阶用户可以看看：</span></p>
+
+<p class=MsoNormal><span lang=EN-US><img width=554 height=369 id="图片 10"
+src="InsideBashSourceCode(1).files/image004.jpg"></span></p>
+
+<h2><span lang=EN-US style='font-size:14.0pt;line-height:173%'>3.2 FOR_COM</span></h2>
+
+<p class=MsoNormal><span lang=EN-US><img width=554 height=136 id="图片 4"
+src="InsideBashSourceCode(1).files/image005.jpg"></span></p>
+
+<p class=MsoNormal><span lang=EN-US>FOR_COM</span><span style='font-family:
+宋体'>对应的</span><span lang=EN-US>shell</span><span style='font-family:宋体'>语句是</span><span
+lang=EN-US>for name in map_list; do action; done</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体'>从结构体定义可以看出，除了和</span><span
+lang=EN-US>COMMAND</span><span style='font-family:宋体'>相同的</span><span
+lang=EN-US>flags</span><span style='font-family:宋体'>和行号外，</span><span
+lang=EN-US>for</span><span style='font-family:宋体'>语句是有一个变量名，一个列表和一个递归的</span><span
+lang=EN-US>COMMAND</span><span style='font-family:宋体'>组成的，实际</span><span
+lang=EN-US>for</span><span style='font-family:宋体'>循环执行过程中也是将列表中的每个元素拿出来赋值给变量名，并执行</span><span
+lang=EN-US>action</span><span style='font-family:宋体'>中的脚本段。</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体'>从这里的</span><span lang=EN-US>flags</span><span
+style='font-family:宋体'>，可以看出，每条命令的</span><span lang=EN-US>flags</span><span
+style='font-family:宋体'>是可以单独设置的，本条命令设置的控制参数可以不影响其他命令的控制参数。</span></p>
+
+<h2><span lang=EN-US style='font-size:14.0pt;line-height:173%'>3.3 CASE_COM</span></h2>
+
+<p class=MsoNormal><span lang=EN-US><img width=554 height=200 id="图片 16"
+src="InsideBashSourceCode(1).files/image006.jpg"></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体'>对照下面的脚本，可以看出，先判断一个变量，变量判断晚走到复合语句</span><span
+lang=EN-US>clauses</span><span style='font-family:宋体'>，注意</span><span
+lang=EN-US>clause</span><span style='font-family:宋体'>最终实现的时候是一个单向链表，链表中每个元素由一个样式的列表和一个执行体</span><span
+lang=EN-US>action</span><span style='font-family:宋体'>来组成。</span></p>
+
+<p class=MsoNormal><span lang=EN-US><img width=294 height=232 id="图片 19"
+src="InsideBashSourceCode(1).files/image007.jpg"></span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<h1><span lang=EN-US style='font-size:14.0pt;line-height:240%'>4 bash</span><span
+style='font-size:14.0pt;line-height:240%;font-family:宋体'>脚本的执行过程分析</span></h1>
+
+<p class=MsoNormal><span style='font-family:宋体'>一个环境上多个</span><span lang=EN-US>sh</span><span
+style='font-family:宋体'>的</span><span lang=EN-US>cpu</span><span
+style='font-family:宋体'>占用达到</span><span lang=EN-US>99%</span><span
+style='font-family:宋体'>，但实际通过</span><span lang=EN-US>ps</span><span
+style='font-family:宋体'>看，这个</span><span lang=EN-US>sh</span><span
+style='font-family:宋体'>并没有带任何参数，如果想要知道这个</span><span lang=EN-US>sh</span><span
+style='font-family:宋体'>在干什么活，为何会一直冲高，还是</span><span lang=EN-US>gdb</span><span
+style='font-family:宋体'>调试一下比较靠谱（还有一种可选的方法是不断的敲</span><span lang=EN-US> cat
+/proc/*/stack </span><span style='font-family:宋体'>来反复查看堆栈，多敲敲之后总能抓到几次上下文，其中</span><span
+lang=EN-US>*</span><span style='font-family:宋体'>换成对应进程的</span><span lang=EN-US>pid</span><span
+style='font-family:宋体'>）。</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体'>通过下面的调试，可以看到当前执行是一个简单命令</span><span
+lang=EN-US>(cm_simple)</span><span style='font-family:宋体'>，通过</span><span
+lang=EN-US style='font-family:"Arial","sans-serif";color:red'>p *command-</span><span
+style='font-family:宋体;color:red'>＞</span><span lang=EN-US style='font-family:
+"Arial","sans-serif";color:red'>value-</span><span style='font-family:宋体;
+color:red'>＞</span><span lang=EN-US style='font-family:"Arial","sans-serif";
+color:red'>Simple-</span><span style='font-family:宋体;color:red'>＞</span><span
+lang=EN-US style='font-family:"Arial","sans-serif";color:red'>words-</span><span
+style='font-family:宋体;color:red'>＞</span><span lang=EN-US style='font-family:
+"Arial","sans-serif";color:red'>word</span><span lang=EN-US style='font-family:
+"Arial","sans-serif";color:black'>&nbsp;</span><span style='font-family:宋体;
+color:black'>看到当前执行的简单命令在字符串是</span><span lang=EN-US style='font-family:"Arial","sans-serif";
+color:black'>true</span><span style='font-family:宋体;color:black'>。</span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;line-height:15.0pt;background:white'><span
+lang=EN-US style='font-size:10.5pt;font-family:"Arial","sans-serif";color:black'>Breakpoint
+1, execute_command (command=0x10946f0) at execute_cmd.c:386</span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;line-height:15.0pt;background:white'><span
+lang=EN-US style='font-size:10.5pt;font-family:"Arial","sans-serif";color:black'>386
+&nbsp; &nbsp; &nbsp; result = execute_command_internal (command, 0, NO_PIPE,
+NO_PIPE, bitmap);</span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;line-height:15.0pt;background:white'><span
+lang=EN-US style='font-size:10.5pt;font-family:"Arial","sans-serif";color:black'>(gdb)
+p *command</span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;line-height:15.0pt;background:white'><span
+lang=EN-US style='font-size:10.5pt;font-family:"Arial","sans-serif";color:black'>$9
+= {</span><span lang=EN-US style='font-size:10.5pt;font-family:"Arial","sans-serif";
+color:red'>type = cm_simple</span><span lang=EN-US style='font-size:10.5pt;
+font-family:"Arial","sans-serif";color:black'>, flags = 8, line = 0, redirects
+= 0x0, value = {For = 0x1094760, Case = 0x1094760, While = 0x1094760,&nbsp;</span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;line-height:15.0pt;background:white'><span
+lang=EN-US style='font-size:10.5pt;font-family:"Arial","sans-serif";color:black'>&nbsp;
+&nbsp; If = 0x1094760, Connection = 0x1094760, Simple = 0x1094760, Function_def
+= 0x1094760, Group = 0x1094760, Select = 0x1094760,&nbsp;</span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;line-height:15.0pt;background:white'><span
+lang=EN-US style='font-size:10.5pt;font-family:"Arial","sans-serif";color:black'>&nbsp;
+&nbsp; Arith = 0x1094760, Cond = 0x1094760, ArithFor = 0x1094760, Subshell =
+0x1094760, Coproc = 0x1094760}}</span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;line-height:15.0pt;background:white'><span
+lang=EN-US style='font-size:10.5pt;font-family:"Arial","sans-serif";color:black'>(gdb)
+p *command-</span><span style='font-size:10.5pt;color:black'>＞</span><span
+lang=EN-US style='font-size:10.5pt;font-family:"Arial","sans-serif";color:black'>value-</span><span
+style='font-size:10.5pt;color:black'>＞</span><span lang=EN-US style='font-size:
+10.5pt;font-family:"Arial","sans-serif";color:black'>Simple&nbsp;</span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;line-height:15.0pt;background:white'><span
+lang=EN-US style='font-size:10.5pt;font-family:"Arial","sans-serif";color:black'>$10
+= {flags = 8, line = 3, words = 0x1094740, redirects = 0x0}</span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;line-height:15.0pt;background:white'><span
+lang=EN-US style='font-size:10.5pt;font-family:"Arial","sans-serif";color:black'>(gdb)
+</span><span lang=EN-US style='font-size:10.5pt;font-family:"Arial","sans-serif";
+color:red'>p *command-</span><span style='font-size:10.5pt;color:red'>＞</span><span
+lang=EN-US style='font-size:10.5pt;font-family:"Arial","sans-serif";color:red'>value-</span><span
+style='font-size:10.5pt;color:red'>＞</span><span lang=EN-US style='font-size:
+10.5pt;font-family:"Arial","sans-serif";color:red'>Simple-</span><span
+style='font-size:10.5pt;color:red'>＞</span><span lang=EN-US style='font-size:
+10.5pt;font-family:"Arial","sans-serif";color:red'>words-</span><span
+style='font-size:10.5pt;color:red'>＞</span><span lang=EN-US style='font-size:
+10.5pt;font-family:"Arial","sans-serif";color:red'>word</span><span lang=EN-US
+style='font-size:10.5pt;font-family:"Arial","sans-serif";color:black'>&nbsp;</span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;line-height:15.0pt;background:white'><span
+lang=EN-US style='font-size:10.5pt;font-family:"Arial","sans-serif";color:black'>$11
+= {word = 0x10946d0 &quot;</span><span lang=EN-US style='font-size:10.5pt;
+font-family:"Arial","sans-serif";color:red'>true</span><span lang=EN-US
+style='font-size:10.5pt;font-family:"Arial","sans-serif";color:black'>&quot;,
+flags = 0}</span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;line-height:15.0pt;background:white'><span
+lang=EN-US style='font-size:10.5pt;font-family:"Arial","sans-serif";color:black'>(gdb)
+c</span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;line-height:15.0pt;background:white'><span
+lang=EN-US style='font-size:10.5pt;font-family:"Arial","sans-serif";color:black'>Continuing.</span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;line-height:15.0pt;background:white'><span
+style='font-size:10.5pt;color:black'>重新运行，可以看到又跑到了一个简单命令，其命令是</span><span
+lang=EN-US style='font-size:10.5pt;font-family:"Arial","sans-serif";color:red'>&quot;i=i+1&quot;</span><span
+style='font-size:10.5pt'>（汗）。</span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;line-height:15.0pt;background:white'><span
+lang=EN-US style='font-size:10.5pt;font-family:"Arial","sans-serif";color:black'>Breakpoint
+1, execute_command (command=0x10947b0) at execute_cmd.c:386</span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;line-height:15.0pt;background:white'><span
+lang=EN-US style='font-size:10.5pt;font-family:"Arial","sans-serif";color:black'>386
+&nbsp; &nbsp; &nbsp; result = execute_command_internal (command, 0, NO_PIPE,
+NO_PIPE, bitmap);</span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;line-height:15.0pt;background:white'><span
+lang=EN-US style='font-size:10.5pt;font-family:"Arial","sans-serif";color:black'>(gdb)
+p *command</span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;line-height:15.0pt;background:white'><span
+lang=EN-US style='font-size:10.5pt;font-family:"Arial","sans-serif";color:black'>$12
+= {type = </span><span lang=EN-US style='font-size:10.5pt;font-family:"Arial","sans-serif";
+color:red'>cm_simple</span><span lang=EN-US style='font-size:10.5pt;font-family:
+"Arial","sans-serif";color:black'>, flags = 0, line = 0, redirects = 0x0, value
+= {For = 0x1094ad0, Case = 0x1094ad0, While = 0x1094ad0,&nbsp;</span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;line-height:15.0pt;background:white'><span
+lang=EN-US style='font-size:10.5pt;font-family:"Arial","sans-serif";color:black'>&nbsp;
+&nbsp; If = 0x1094ad0, Connection = 0x1094ad0, Simple = 0x1094ad0, Function_def
+= 0x1094ad0, Group = 0x1094ad0, Select = 0x1094ad0,&nbsp;</span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;line-height:15.0pt;background:white'><span
+lang=EN-US style='font-size:10.5pt;font-family:"Arial","sans-serif";color:black'>&nbsp;
+&nbsp; Arith = 0x1094ad0, Cond = 0x1094ad0, ArithFor = 0x1094ad0, Subshell =
+0x1094ad0, Coproc = 0x1094ad0}}</span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;line-height:15.0pt;background:white'><span
+lang=EN-US style='font-size:10.5pt;font-family:"Arial","sans-serif";color:black'>(gdb)</span><span
+lang=EN-US style='font-size:10.5pt;font-family:"Arial","sans-serif";color:red'>
+p *command-</span><span style='font-size:10.5pt;color:red'>＞</span><span
+lang=EN-US style='font-size:10.5pt;font-family:"Arial","sans-serif";color:red'>value-</span><span
+style='font-size:10.5pt;color:red'>＞</span><span lang=EN-US style='font-size:
+10.5pt;font-family:"Arial","sans-serif";color:red'>Simple-</span><span
+style='font-size:10.5pt;color:red'>＞</span><span lang=EN-US style='font-size:
+10.5pt;font-family:"Arial","sans-serif";color:red'>words-</span><span
+style='font-size:10.5pt;color:red'>＞</span><span lang=EN-US style='font-size:
+10.5pt;font-family:"Arial","sans-serif";color:red'>word&nbsp;</span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;line-height:15.0pt;background:white'><span
+lang=EN-US style='font-size:10.5pt;font-family:"Arial","sans-serif";color:black'>$13
+= {word = 0x1094ab0 </span><span lang=EN-US style='font-size:10.5pt;font-family:
+"Arial","sans-serif";color:red'>&quot;i=i+1&quot;</span><span lang=EN-US
+style='font-size:10.5pt;font-family:"Arial","sans-serif";color:black'>, flags =
+20}</span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;line-height:15.0pt;background:white'><span
+lang=EN-US style='font-size:10.5pt;font-family:"Arial","sans-serif";color:black'>(gdb)
+c</span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;line-height:15.0pt;background:white'><span
+lang=EN-US style='font-size:10.5pt;font-family:"Arial","sans-serif";color:black'>Continuing.</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体'>通过</span><span lang=EN-US>shell</span><span
+style='font-family:宋体'>的进程号，查询进程的上下文，发现是从另外一个虚机链接过来的</span><span lang=EN-US>ssh</span><span
+style='font-family:宋体'>，咨询环境负责人，该虚机是跑测试用例的，之前跑的测试用例不知道为何没有正常停止，测试用例确实就是简单的一行命令：</span></p>
+
+<p class=MsoNormal><span lang=EN-US><img width=241 height=26 id="图片 22"
+src="InsideBashSourceCode(1).files/image008.jpg"></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;line-height:15.0pt;background:white'><span
+lang=EN-US style='font-size:10.5pt;font-family:"Arial","sans-serif";color:black'>cat
+/proc/27538/environ&nbsp;</span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;line-height:15.0pt;background:white'><span
+lang=EN-US style='font-size:10.5pt;font-family:"Arial","sans-serif";color:black'>XDG_SESSION_ID=24620SHELL=/bin/bashSSH_CLIENT=192.168.9.13
+45494
+22USER=rootPATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/binMAIL=/var/mail/rootPWD=/rootHOME=/rootSHLVL=2LOGNAME=rootSSH_CONNECTION=192.168.9.13
+45494 192.168.9.196 22XDG_RUNTIME_DIR=/run/user/0_=/bin/sh-bash-4.2#&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>
