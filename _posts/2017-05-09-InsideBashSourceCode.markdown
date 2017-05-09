@@ -15,14 +15,19 @@ Bash源码分析
 
 
 
-#1 引言
+1 引言
+====================================
 Bash这个程序作为一个linux的用户，用的实在太频繁了，但一般局限于会用就结束了，一直没机会研究bash本身的原理。因工作需要，调试一个bash的cpu冲高问题，趁此机会对bash的源码做了一些研究，希望能对大家有点帮助。
 
-#2 linux的各种主流shell介绍
+2 linux的各种主流shell介绍
+====================================
 现在一般使用的shell有sh，bash和csh这几种，我们这里主要说的是bash，其他shell的源代码逻辑也差不多。
 
-#3 bash使用到的主要数据结构介绍
-##3.1 COMMAND
+3 bash使用到的主要数据结构介绍
+====================================
+
+## 3.1 COMMAND
+====================================
 
 {% highlight c linenos %}
 /* What a command looks like. */
@@ -83,7 +88,8 @@ COMMAND是所有数据结构的纲，从这里可以看出一个bash实际能执
 这些flag可以在bash启动shell脚本时设置，或者在shell脚本内部调用set指令来设置，一般用户不怎么关注，高阶用户可以看看：
 ![Alt text](/assets/InsideBashSourceCode906.png "bash")
 
-##3.2 FOR_COM
+## 3.2 FOR_COM
+====================================
 {% highlight c linenos %}
 /* FOR command. */
 typedef struct for_com {
@@ -100,7 +106,8 @@ FOR_COM对应的shell语句是for name in map_list; do action; done
 从结构体定义可以看出，除了和COMMAND相同的flags和行号外，for语句是有一个变量名，一个列表和一个递归的COMMAND组成的，实际for循环执行过程中也是将列表中的每个元素拿出来赋值给变量名，并执行action中的脚本段。
 从这里的flags，可以看出，每条命令的flags是可以单独设置的，本条命令设置的控制参数可以不影响其他命令的控制参数。
 
-##3.3 CASE_COM
+## 3.3 CASE_COM
+====================================
 {% highlight c linenos %}
 /* The CASE command. */
 typedef struct case_com {
@@ -122,7 +129,8 @@ case word in
 esac
 {% endhighlight %}
 
-##3.4 WHILE_COM
+## 3.4 WHILE_COM
+====================================
 {% highlight c linenos %}
 /* WHILE command. */
 typedef struct while_com {
@@ -137,7 +145,8 @@ WHILE_COM比较简单，主体有两部分组成，判断条件和执行体。�
 while :; do i=$((i+1)); done
 {% endhighlight %}
 
-##3.5 IF_COM
+## 3.5 IF_COM
+====================================
 
 {% highlight c linenos %}
 /* IF command. */
@@ -159,7 +168,8 @@ fi
 
 从IF_COM的定义看，3部分都可以是复杂的COMMAND结构，所以嵌套起来也可以做的非常复杂，例如可以在test部分通过执行脚本，依靠脚本的返回值来判断是应该执行true_case还是false_case。
 
-##3.6 CONNECTION
+## 3.6 CONNECTION
+====================================
 {% highlight c linenos %}
 /* Structure used to represent the CONNECTION type. */
 typedef struct connection {
@@ -179,7 +189,8 @@ cd $dir ; rm -fr *
 
 上面的三个例子别真的执行，后果很严重(:))。第一条表示删除$dir对应值的目录中的所有文件；第二条表示$dir不存在的时候删除当前目录下面的所有文件；第三条表示，如果$dir存在就删除$dir目录下的所有文件，如果不存在就删除当前目录下面的所有文件。
 
-##3.7 SIMPLE_COM
+## 3.7 SIMPLE_COM
+====================================
 {% highlight c linenos %}
 /* The "simple" command.  Just a collection of words and redirects. */
 typedef struct simple_com {
@@ -293,7 +304,8 @@ enum r_instruction {
 
 Bash的重定向真是博大精深！！
 
-##3.8 FUNCTION_DEF
+## 3.8 FUNCTION_DEF
+====================================
 
 {% highlight c linenos %}
 /* The "function definition" command. */
@@ -314,7 +326,8 @@ function e {
 {% endhighlight %}
 
 
-##3.9 GROUP_COM
+## 3.9 GROUP_COM
+====================================
 
 {% highlight c linenos %}
 /* A command that is `grouped' allows pipes and redirections to affect all
@@ -366,7 +379,8 @@ print_group_command (group_command)
 }
 {% endhighlight %}
 
-##3.10 SELECT_COM
+## 3.10 SELECT_COM
+====================================
 
 {% highlight c linenos %}
 #if defined (SELECT_COMMAND)
@@ -421,7 +435,9 @@ SELECT_COM的作用是为了生成一个简单的菜单，用户通过选择菜�
 还要判断一下当前是cshell还是其他shell，指导用户将当前的时区改到shell的启动脚本里面去（老大你写了这么多代码，不能自动把这句加进去么？还是要手动加:)）。
 
 ![Alt text](/assets/InsideBashSourceCode3727.png "bash")
-##3.11 ARITH_COM
+
+## 3.11 ARITH_COM
+====================================
 
 {% highlight c linenos %}
 #if defined (DPAREN_ARITHMETIC)
@@ -502,7 +518,8 @@ execute_arith_command (arith_command)
 
 {% endhighlight %}
 
-##3.12 COND_COM
+## 3.12 COND_COM
+====================================
 {% highlight c linenos %}
 typedef struct cond_com {
   int flags;
@@ -723,7 +740,8 @@ binary_operator ()
 还有五个：-ef（equal file，同一文件，不只是文件内容完全一样，而且需要文件指向的inode节点也完全一样），-eq（equal，算术相等），-ne（not equal，算术不相等），-ge（greater or equal，算术大于等于），-le（算术小于等于）。上面的算术计算，对字符串也试用。
 
 
-##3.13 ARITH_FOR_COM
+## 3.13 ARITH_FOR_COM
+====================================
 {% highlight c linenos %}
 #if defined (ARITH_FOR_COMMAND)
 typedef struct arith_for_com {
@@ -746,7 +764,8 @@ do
 done
 {% endhighlight %}
 
-##3.14 SUBSHELL_COM
+## 3.14 SUBSHELL_COM
+====================================
 {% highlight c linenos %}
 typedef struct subshell_com {
   int flags;
@@ -755,7 +774,8 @@ typedef struct subshell_com {
 {% endhighlight %}
 SUBSHELL_COM的结构体定义比较简单，就是一个命令属性，看来关键的复杂度还是在写shell脚本本身上，不过对bash本身而言，就是把脚本文件读进来，后面一行一行执行的时候，和其他普通命令没有差别。
 
-##3.15 COPROC_COM
+## 3.15 COPROC_COM
+====================================
 
 {% highlight c linenos %}
 typedef struct coproc_com {
@@ -766,7 +786,8 @@ typedef struct coproc_com {
 {% endhighlight %}
 COPROC_COM的全称是coprocess，翻译成中文应该是协程的意思，不过shell里面的协程没有像高级语言那么复杂，对bash而言，执行结果和执行命令后面加一个&类似，不过可以制定协程的名字。
 
-#4 bash源代码的目录结构
+4 bash源代码的目录结构
+====================================
 现在才说源代码的目录结构是不是晚了点。
 前面分析数据结构的时候，基本上把每个命令的执行过程也简单过了一下，这样大家读代码的时候先有一个概貌，不至于一叶障目不见泰山。
 用tree命令打印出来的目录结构如下，其中builtins目录里面是大多数内置命令（例如cd，pwd等）的实现，但没有看到ls命令，难道部分复杂命令还另外建了git库来实现？
@@ -1351,7 +1372,8 @@ $*和$@都是打印出剩余所有参数，按代码的说法，$*和$@的差别
 
 
 
-#5 bash脚本的执行过程分析
+5 bash脚本的执行过程分析
+====================================
 一个环境上多个sh的cpu占用达到99%，但实际通过ps看，这个sh并没有带任何参数，如果想要知道这个sh在干什么活，为何会一直冲高，还是gdb调试一下比较靠谱（还有一种可选的方法是不断的敲 cat /proc/*/stack 来反复查看堆栈，多敲敲之后总能抓到几次上下文，其中*换成对应进程的pid）。
 通过下面的调试，可以看到当前执行是一个简单命令(cm_simple)，通过p *command-＞value-＞Simple-＞words-＞word 看到当前执行的简单命令在字符串是true。
 {% highlight bash linenos %}
@@ -1389,7 +1411,8 @@ XDG_SESSION_ID=24620SHELL=/bin/bashSSH_CLIENT=192.168.9.13 45494 22USER=rootPATH
 
 {% endhighlight %}
 
-#6 结束语
+6 结束语
+====================================
 Bash的源码解析到这里就结束了，更详细的内容，需要各位读者在实际使用时一一对应bash的源代码来得到更详细的解读，源码都来自于GNU的社区：https://git.savannah.gnu.org/git/bash.git，欢迎感兴趣的同事一起讨论分析。
 
 
